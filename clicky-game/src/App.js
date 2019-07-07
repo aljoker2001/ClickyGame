@@ -26,7 +26,7 @@ class App extends React.Component {
           i.clicked = true
         }
       }
-      this.win()
+      this.win(event)
       this.randomCharacter(characters)
       // This will increase both the top and current score if the correct answer brings the score past the top score
     } else if (event.target.title === 'false' && this.state.score === this.state.top) {
@@ -38,7 +38,7 @@ class App extends React.Component {
           i.clicked = true
         }
       }
-      this.win()
+      this.win(event)
       this.randomCharacter(characters)
     } else {
       console.log('clicked status', event.target.title)
@@ -51,16 +51,17 @@ class App extends React.Component {
     }
   }
   
-  win = () => {
+  win = (event) => {
     if (this.state.score === 11) {
+      console.log('winner poke', event.target.alt)
+      event.target.title = 'false'
       console.log('winner winner chicken dinner')
       alert('You selected each Pokemon without any duplicates.\nCongratulations!\nGet ready to play again.')
-      this.setState({ score: 0 })
       for (let i in characters) {
         characters[i].clicked = false
         console.log('character after win', characters[i])
       }
-
+      this.setState({ score: 0 })
     }
   }
 
@@ -72,7 +73,7 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state.characters)
+    console.log('render', this.state.characters)
     return (
       <Wrapper>
         <Header

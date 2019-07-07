@@ -1,10 +1,8 @@
 import React from 'react'
 import './Character.css'
-import '../Header/Header.js'
-// import Header from '../Header/Header.js';
 
 const AddCard = (props) => {
-  // console.log('header', props)
+  console.log('pokemon passed to card', props)
   return (
     <div className='card col-3'>
       <div className='img-container'>
