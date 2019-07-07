@@ -4,6 +4,7 @@ import '../Header/Header.js'
 // import Header from '../Header/Header.js';
 
 const AddCard = (props) => {
+  // console.log('header', props)
   return (
     <div className='card col-3'>
       <div className='img-container'>
