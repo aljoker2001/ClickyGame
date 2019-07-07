@@ -2,7 +2,6 @@ import React from 'react';
 import './Header.css'
 
 const Header = (props) => {
-  // console.log('header', props)
         return (
             <div className="card text-center">
               <h1 className="card-header bg-primary text-white">

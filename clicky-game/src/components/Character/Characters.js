@@ -2,7 +2,6 @@ import React from 'react'
 import './Character.css'
 
 const AddCard = (props) => {
-  console.log('pokemon passed to card', props)
   return (
     <div className='card col-3'>
       <div className='img-container'>

@@ -15,7 +15,6 @@ class App extends React.Component {
   // This method increases the current and top scores while at the same time calling the randomCharacter function after each click
   handleIncrement = (event) => {
     // assigns "pokemon" as the selected pokemon
-    console.log('selected pokemon', event.target)
     let pokemon = event.target.alt
     // This will increase the current score, but not the top score if the current round is beneath the top score
     if (event.target.title === 'false' && this.state.score < this.state.top) {
@@ -40,8 +39,8 @@ class App extends React.Component {
       }
       this.win(event)
       this.randomCharacter(characters)
+      // If the user selects an already selected pokemon, the game will end and reset, leaving the top score the same
     } else {
-      console.log('clicked status', event.target.title)
       alert(`You already chose ${event.target.alt}.  You suck and you lose.\nTry again.`)
       this.setState({ score: 0 })
       for (let i in characters) {
@@ -50,21 +49,18 @@ class App extends React.Component {
       this.randomCharacter(characters)
     }
   }
-  
+  // Checks to see if the user reached the top score.  If so, they are alerted and the game resets, leaving the top score as 12
   win = (event) => {
     if (this.state.score === 11) {
-      console.log('winner poke', event.target.alt)
       event.target.title = 'false'
-      console.log('winner winner chicken dinner')
       alert('You selected each Pokemon without any duplicates.\nCongratulations!\nGet ready to play again.')
       for (let i in characters) {
         characters[i].clicked = false
-        console.log('character after win', characters[i])
       }
       this.setState({ score: 0 })
     }
   }
-
+// Randomizes the order of the pokemon sent to the Character component
   randomCharacter = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
       let j = Math.floor(Math.random() * (i + 1)); // random index from 0 to i
@@ -73,7 +69,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log('render', this.state.characters)
     return (
       <Wrapper>
         <Header
@@ -95,23 +90,6 @@ class App extends React.Component {
           ))}
         </div>
       </Wrapper>
-
-      // <div className="App">
-      //   <header className="App-header">
-      //     <img src={logo} className="App-logo" alt="logo" />
-      //     <p>
-      //       Edit <code>src/App.js</code> and save to reload.
-      //     </p>
-      //     <a
-      //       className="App-link"
-      //       href="https://reactjs.org"
-      //       target="_blank"
-      //       rel="noopener noreferrer"
-      //     >
-      //       Learn React
-      //     </a>
-      //   </header>
-      // </div>
     );
   }
 }
