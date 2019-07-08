@@ -2,19 +2,19 @@
     {
         "id": 1,
         "name": "Pikachu",
-        "image": "https://s15-us2.startpage.com/cgi-bin/serveimage?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0045%2F3561%2F5599%2Fproducts%2FC750093_300x.jpg%3Fv%3D1545967279&sp=34d6347ddcb00c64d91b7797a0acde94&anticache=227656",
+        "image": "https://cdn.bulbagarden.net/upload/thumb/0/0d/025Pikachu.png/900px-025Pikachu.png",
         "clicked": false
     },
     {
         "id": 2,
         "name": "Charmander",
-        "image": "https://s17-us2.startpage.com/cgi-bin/serveimage?url=https%3A%2F%2Fwww.cgcreativeshop.com%2Fimages%2FCharmander_Pokemon_P.jpg&sp=a35715023d69ddb108ca64cbba2e01e7&anticache=932335",
+        "image": "https://s15-us2.startpage.com/cgi-bin/serveimage?url=https%3A%2F%2Fcdn.bulbagarden.net%2Fupload%2Fthumb%2F7%2F73%2F004Charmander.png%2F250px-004Charmander.png&sp=670d158c8888f66f6128cfc7d364543c&anticache=464510",
         "clicked": false
     },
     {
         "id": 3,
         "name": "Squirtle",
-        "image": "https://s15-us2.startpage.com/cgi-bin/serveimage?url=https%3A%2F%2Fwww.diegokrause.com.ar%2Fwp-content%2Fuploads%2F2018%2F06%2FSquirtle-300x300.jpg&sp=1bb4bd5d0832af1377361eb61d03e6ae&anticache=693678",
+        "image": "https://s14-eu5.startpage.com/cgi-bin/serveimage?url=https%3A%2F%2Fcdn.bulbagarden.net%2Fupload%2Fthumb%2F3%2F39%2F007Squirtle.png%2F250px-007Squirtle.png&sp=036d2e182c18b7a954489421a5ac7625&anticache=459581",
         "clicked": false
     },
     {
@@ -62,7 +62,7 @@
     {
         "id": 11,
         "name": "Articuno",
-        "image": "https://s16-us2.startpage.com/cgi-bin/serveimage?url=https%3A%2F%2Fd2skuhm0vrry40.cloudfront.net%2F2015%2Farticles%2F1%2F8%2F4%2F7%2F4%2F2%2F2%2Flooks-like-someone-may-have-pokemon-go-legendary-articuno-147023198591.png%2FEG11%2Fresize%2F300x-1%2Fquality%2F75%2Fformat%2Fjpg&sp=08a1f5e472359e11f804ac0169e0704e&anticache=473764",
+        "image": "https://s16-us2.startpage.com/cgi-bin/serveimage?url=https%3A%2F%2Fcdn.bulbagarden.net%2Fupload%2Fthumb%2F4%2F4e%2F144Articuno.png%2F250px-144Articuno.png&sp=91013439ca4ed97997881a3c38ddaad1&anticache=364249",
         "clicked": false
     },
     {

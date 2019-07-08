@@ -3,12 +3,9 @@ import './Character.css'
 
 const AddCard = (props) => {
   return (
-    <div className='card col-3'>
-      <div className='img-container'>
-        <img alt={props.name} src={props.image} title={props.clicked.toString()} onClick={props.handleIncrement} />
-      </div>
-      <div className='content text-center'>
-        <p><strong>{props.name}</strong></p>
+    <div className='col-3'>
+      <div className='img-container text-white'>
+        <img alt={props.name} src={props.image} data-clicked={props.clicked.toString()} title={props.name} onClick={props.handleIncrement} />
       </div>
     </div>
   )

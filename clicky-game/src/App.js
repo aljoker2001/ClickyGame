@@ -17,9 +17,9 @@ class App extends React.Component {
     // assigns "pokemon" as the selected pokemon
     let pokemon = event.target.alt
     // This will increase the current score, but not the top score if the current round is beneath the top score
-    if (event.target.title === 'false' && this.state.score < this.state.top) {
+    if (event.target.dataset.clicked === 'false' && this.state.score < this.state.top) {
       this.setState({ score: this.state.score + 1 })
-      event.target.title = 'true'
+      event.target.dataset.clicked = 'true'
       for (let i of characters) {
         if (pokemon === i.name) {
           i.clicked = true
@@ -28,10 +28,10 @@ class App extends React.Component {
       this.win(event)
       this.randomCharacter(characters)
       // This will increase both the top and current score if the correct answer brings the score past the top score
-    } else if (event.target.title === 'false' && this.state.score === this.state.top) {
+    } else if (event.target.dataset.clicked === 'false' && this.state.score === this.state.top) {
       this.setState({ score: this.state.score + 1 })
       this.setState({ top: this.state.top + 1 })
-      event.target.title = 'true'
+      event.target.dataset.clicked = 'true'
       for (let i of characters) {
         if (pokemon === i.name) {
           i.clicked = true
@@ -41,7 +41,7 @@ class App extends React.Component {
       this.randomCharacter(characters)
       // If the user selects an already selected pokemon, the game will end and reset, leaving the top score the same
     } else {
-      alert(`You already chose ${event.target.alt}.  You suck and you lose.\nTry again.`)
+      alert(`You already chose ${event.target.alt}.  You suck and you lose.\n\nTry again.`)
       this.setState({ score: 0 })
       for (let i in characters) {
         characters[i].clicked = false
@@ -52,15 +52,15 @@ class App extends React.Component {
   // Checks to see if the user reached the top score.  If so, they are alerted and the game resets, leaving the top score as 12
   win = (event) => {
     if (this.state.score === 11) {
-      event.target.title = 'false'
-      alert('You selected each Pokemon without any duplicates.\nCongratulations!\nGet ready to play again.')
+      event.target.dataset.clicked = 'false'
+      alert('You selected each Pokemon without any duplicates.\n\nCongratulations!\n\nGet ready to play again.')
       for (let i in characters) {
         characters[i].clicked = false
       }
       this.setState({ score: 0 })
     }
   }
-// Randomizes the order of the pokemon sent to the Character component
+  // Randomizes the order of the pokemon sent to the Character component
   randomCharacter = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
       let j = Math.floor(Math.random() * (i + 1)); // random index from 0 to i
@@ -70,26 +70,28 @@ class App extends React.Component {
 
   render() {
     return (
-      <Wrapper>
+      <div>
         <Header
           score={this.state.score}
           top={this.state.top}
         />
-        <div className="d-flex flex-wrap">
-          {this.state.characters.map((character) => (
-            <Character
-              key={character.id}
-              image={character.image}
-              name={character.name}
-              clicked={character.clicked}
-              score={this.state.score}
-              top={this.state.top}
-              handleIncrement={this.handleIncrement}
-            >
-            </Character>
-          ))}
-        </div>
-      </Wrapper>
+        <Wrapper>
+          <div className="d-flex flex-wrap">
+            {this.state.characters.map((character) => (
+              <Character
+                key={character.id}
+                image={character.image}
+                name={character.name}
+                clicked={character.clicked}
+                score={this.state.score}
+                top={this.state.top}
+                handleIncrement={this.handleIncrement}
+              >
+              </Character>
+            ))}
+          </div>
+        </Wrapper>
+      </div>
     );
   }
 }
